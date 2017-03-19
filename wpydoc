@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e -u
+export LC_ALL=C
+printf 'file:///usr/share/doc/python/html/library/%s.html\n' "$@" \
+| tr A-Z a-z \
+| xargs -n1 sensible-browser
