@@ -1,4 +1,8 @@
 #!/bin/sh
+
+# Copyright © 2017-2018 Jakub Wilk <jwilk@jwilk.net>
+# SPDX-License-Identifier: MIT
+
 set -e -u
 export LC_ALL=C
 printf 'file:///usr/share/doc/python3/html/library/%s.html\n' "$@" \
