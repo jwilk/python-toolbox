@@ -5,6 +5,6 @@
 
 set -e -u
 export LC_ALL=C
-printf 'file:///usr/share/doc/python3/html/library/%s.html\n' "$@" \
+printf 'file:///usr/share/doc/python3/html/library/%s.html\n' "${@:-index}" \
 | tr A-Z a-z \
 | xargs -n1 sensible-browser
