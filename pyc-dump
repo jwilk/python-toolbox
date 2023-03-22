@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+# encoding=UTF-8
+
+# Copyright © 2023 Jakub Wilk <jwilk@jwilk.net>
+# SPDX-License-Identifier: MIT
+
+'''
+dump the *.pyc file structure
+
+do not use on untrusted input!
+'''
+
+import argparse
+
+import diffoscope.comparators.python
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('path', metavar='FILE')
+    options = ap.parse_args()
+    path = options.path
+    desc = diffoscope.comparators.python.describe_pyc(path)
+    print(desc)
+
+if __name__ == '__main__':
+    main()
+
+# vim:ts=4 sts=4 sw=4 et
